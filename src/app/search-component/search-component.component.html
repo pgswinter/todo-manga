@@ -1,0 +1,19 @@
+<div>
+    <input #searchBox id="search-box"/>
+    <button (click)="submitSearch(searchBox.value)">Submit</button>
+    <div *ngIf="rows">
+      <ngx-datatable
+        class="material"
+        [loadingIndicator]="loadingIndicator"
+        [rows]="rows"
+        [columns]="[{ prop: 'name' },{ name: 'Gender' },{ name: 'Company' }]"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10">
+      </ngx-datatable>
+    </div>
+    
+</div>
+
